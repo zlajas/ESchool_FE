@@ -1,0 +1,34 @@
+<div class="container">
+<h4>Parent is connected to these students:</h4>
+<div class= "row">
+<div class="col-sm-12 list-group">
+<ul class="parentsKids" >
+  <li *ngFor="let s of parentsKids" class="list-group-item list-group-item-action">
+      <a routerLink="/student-detail/{{s.id}}">
+        {{s.firstName}}  {{s.lastName}}
+        </a>
+        <button type="button" class="close" aria-label="Close" title="delete student from parentsKids"
+        (click)="removeStudentFromParent(s)">x</button>
+  </li>
+</ul>
+</div>
+</div>
+<h4>Remaining students:</h4>
+<div class= "row">
+    <div class="col-sm-12">
+<form class="form-add clearfix" ngNativeValidate (submit)="addStudentToParent()">
+    <div class="form-group">
+        <label for="student">Students</label>
+        <select class="form-control" name="student" [(ngModel)]="student">
+            <option *ngFor="let student of remainingStudents" [ngValue]="student">{{student.firstName}} {{student.lastName}}</option>
+        </select>
+    </div>
+
+    <div class="float-right">
+        <button class="btn btn-outline-primary mr-1" type="submit">Add student to parent</button>
+    </div>
+</form>
+</div>
+</div>
+</div>
+

@@ -1,0 +1,33 @@
+<div class=" forme col-sm-7 my-4 mx-auto">
+  <div>
+    <h3>Add new subject</h3>
+  </div>
+  <div class="col-sm-8">
+    <form ngNativeValidate (submit)="addSubject(subjectName.value, grade.value, semester.value, weeklyFund.value)">
+      <div class="form-group">
+        <label for="subjectName">Subject name</label>
+        <input class="form-control" type="text" id="subjectName" #subjectName tabindex="1" required />
+      </div>
+      <div class="form-group">
+        <label for="grade">Grade</label>
+        <input class="form-control" type="number" id="grade" #grade tabindex="2" required />
+      </div>
+      <div class="form-group">
+        <label for="semester">Semester</label>
+        <input class="form-control" type="number" id="semester" #semester tabindex="3" required
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Weekly fund</label>
+        <input class="form-control" type="number" id="eeklyFund" #weeklyFund tabindex="4" required />
+      </div>
+      <div class="row">
+        <div class="col-sm-7 offset-5">
+          <button class="btn btn-outline-warning w-48" type="reset" tabindex="5">Reset form</button>
+          <button class="btn btn-outline-primary w-48" type="submit" tabindex="6">Add subject</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

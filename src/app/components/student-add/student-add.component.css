@@ -1,0 +1,13 @@
+.forme {
+    background-color: #efefef;
+    border: 1px solid gray;
+    border-radius: 2%;
+    padding: 10px;
+
+    
+}
+button {
+    padding: 3px !important;
+    margin-right: 7px;
+
+}

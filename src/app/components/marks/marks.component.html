@@ -1,0 +1,50 @@
+<div class="container">
+  <h4>Marks:</h4>
+  <div class="row">
+    <table class="col-sm-12">
+      <thead>
+          <tr>
+            <th>Value</th>
+            <th>Date</th>
+            <th>Edit or delete</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mark of marks">
+          <td *ngIf="mark.markValue === 1" class="bg-danger text-white font-weight-bold" contenteditable="true" [textContent]="mark.markValue"
+            (input)="mark.markValue = $event.target.textContent"></td>
+          <td *ngIf="mark.markValue === 2" class="bg-warning text-white font-weight-bold" contenteditable="true" [textContent]="mark.markValue"
+            (input)="mark.markValue = $event.target.textContent"></td>
+          <td *ngIf="mark.markValue === 3" class="bg-info text-white font-weight-bold" contenteditable="true" [textContent]="mark.markValue"
+            (input)="mark.markValue = $event.target.textContent"></td>
+          <td *ngIf="mark.markValue === 4" class="bg-primary text-white font-weight-bold" contenteditable="true" [textContent]="mark.markValue"
+            (input)="mark.markValue = $event.target.textContent"></td>
+          <td *ngIf="mark.markValue === 5" class="bg-success text-white font-weight-bold" contenteditable="true" [textContent]="mark.markValue"
+            (input)="mark.markValue = $event.target.textContent"></td>
+          <td contenteditable="true" [textContent]="mark.markDate" (input)="mark.markDate = $event.target.textContent"></td>
+          <td>
+            <button type="button" class="btn btn-primary btn-md" button (click)="save(mark)">Save</button>
+            <button class='btn btn-danger ml-1' title="delete mark" (click)="delete(mark)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br/>
+  <h4>Choose mark to add:</h4>
+  <div class="row">
+    <div class="col-sm-12">
+      <form class="form-add clearfix" (submit)="adminAddMarkToStudent()">
+        <div class="form-group">
+          <label for="mark">Marks</label>
+          <select class="form-control" name="mark" [(ngModel)]="mValue">
+            <option *ngFor="let mValue of markValues" [ngValue]="mValue">{{mValue}}</option>
+          </select>
+        </div>
+        <div class="float-right">
+          <button class="btn btn-outline-primary mr-1" type="submit">Add mark to student</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

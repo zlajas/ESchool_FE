@@ -1,0 +1,38 @@
+<div class="container" *ngIf="student">
+<h4>Student details</h4>
+  <form>
+  <div class="form-row">
+      <div class="col-md-6">
+          <div class="md-form form-group">
+              <label for="inputFN">First name</label>
+              <input type="text" class="form-control" [(ngModel)]="student.firstName" name="firstName">
+          </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="md-form form-group">
+              <label for="inputLN">Last name</label>
+              <input type="text" class="form-control" [(ngModel)]="student.lastName" name="lastName">
+          </div>
+      </div>
+  </div>
+
+  <div class="form-row">
+        <div class="col-md-6">
+                <div class="md-form form-group">
+                    <label for="inputUN">Username</label>
+                    <input type="text" class="form-control" [(ngModel)]="student.userName" name="userName">
+                </div>
+            </div>
+      <div class="col-md-6">
+          <div class="md-form form-group">
+              <label for="inputDOB">Date of birth</label>
+              <input type="text" class="form-control" [(ngModel)]="student.dateOfBirth" name="dateOfBirth">
+          </div>
+      </div>
+  </div>
+  <button type="button" class="btn btn-secondary" (click)="goBack()">Go back</button>
+  <button type="button" class="btn btn-primary btn-md ml-1" button (click)="save()">Save</button>
+</form>
+</div>
+<app-student-subjects></app-student-subjects>

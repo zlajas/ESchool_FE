@@ -1,0 +1,24 @@
+<div *ngIf="parent">
+        <h3 class="mx-auto">Have a look at your children's marks:</h3>
+    <table *ngFor="let child of parent.children" class="myTable table table-bordered">
+      <th class="student" colspan="3">{{child.studentsFirstName + ' ' + child.studentsLastName}}</th>
+      <tr>
+      <th colspan="1">Subject</th>
+      <th colspan="1">Marks</th>
+      <th colspan="1">Teacher</th>
+    </tr>
+      <tr *ngFor="let subject of child.subjectsAndMarks">
+        <td>
+          <div>{{subject.subjectName| replace : '_' : ' ' }} {{subject.subjectGrade}}
+          </div>
+        </td>
+        <td>
+          <span class="marks" *ngFor="let mark of subject.marks"><a>{{mark.markValue}}</a>
+          </span>
+        </td>
+        <td>
+          {{subject.teacher}}
+        </td>
+      </tr>
+    </table>
+  </div>

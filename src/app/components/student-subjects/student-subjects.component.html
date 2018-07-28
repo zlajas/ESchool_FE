@@ -1,0 +1,41 @@
+<div class="container">
+<br/>
+    <h4>Student attends this subjects:</h4>
+
+    <div class="row">
+        <div class="col-sm-12 list-group">
+            <ul class="studentsSubjects">
+                <li *ngFor="let subject of studentsSubjects" class="list-group-item list-group-item-action">
+                    <a routerLink="/subject-grade-detail/{{studentId}}/{{subject.subjectId}}">
+                        {{subject.subjectName| replace : '_' : ' ' }} {{subject.grade}}
+                    </a>
+                    <button type="button" class="close" aria-label="Close" title="delete subject from student" (click)="removeSubjectFromStudent(subject)">x</button>
+                    <div ngbDropdown placement="right-top" class="d-inline-block">
+                        <button class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle (click)="getTeacherTeachingSubject(subject)">Choose teacher</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                            <button class="dropdown-item" *ngFor="let teacher of teachersTeachingSubject" (click)="addTeacherToStudentSubject(subject, teacher)">{{teacher.firstName}} {{teacher.lastName}}</button>
+                        </div>
+                        {{teacher}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div><br/>
+    <h4>Remaining subjects:</h4>
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="form-add clearfix" (submit)="addSubjectToStudent()">
+                <div class="form-group">
+                    <label for="subject">Subjects</label>
+                    <select class="form-control" name="subject" [(ngModel)]="s">
+                        <option *ngFor="let s of remainingSubjects" [ngValue]="s" [selected]="back">{{s.subjectName| replace : '_' : ' ' }} {{s.grade}}</option>
+                    </select>
+                </div>
+
+                <div class="float-right">
+                    <button class="btn btn-outline-primary mr-1" type="submit">Add subject to student</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

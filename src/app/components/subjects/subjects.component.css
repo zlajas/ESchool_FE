@@ -1,0 +1,6 @@
+.close :hover {
+  color: red;
+}
+ul {
+  padding-left: 15px !important;
+}

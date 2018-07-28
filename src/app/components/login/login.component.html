@@ -1,0 +1,7 @@
+<div *ngIf="loggedInUser && loggedInUser.role==='teachers'">
+    <app-teacher-view [loggedInUser]="loggedInUser"></app-teacher-view>
+</div>
+<div *ngIf="loggedInUser && loggedInUser.role === 'admins'">
+<img class="bodyimg "src="http://i65.tinypic.com/t6t15z.png">
+</div>
+

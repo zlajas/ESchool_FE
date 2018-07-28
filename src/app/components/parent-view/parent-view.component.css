@@ -1,0 +1,10 @@
+span::after {
+    content: ", ";
+  }
+  
+span:last-of-type::after {
+    content: "";
+  }
+  .student{
+    text-align: center;
+}

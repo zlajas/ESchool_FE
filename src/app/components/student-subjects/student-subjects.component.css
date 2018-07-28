@@ -1,0 +1,12 @@
+.close :hover {
+    color: red;
+  }
+  button {
+      margin-left: 30px;      
+  }
+  ul {
+      padding-left: 15px !important;
+  }
+  .dropdown-item:hover {
+    background-color: #007bff;
+}

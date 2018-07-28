@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <h2 class="col-sm-10">Parents</h2>
+    <button class="btn btn-info col-sm-2" routerLink="/parent-add">
+      <i class="fa fa-add"></i>Add parent
+    </button>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-sm-12 list-group pr-0">
+      <ul class="parents">
+        <li *ngFor="let parent of parents" class="list-group-item list-group-item-action">
+          <a routerLink="/parent-detail/{{parent.id}}">
+            {{parent.firstName}} {{parent.lastName}}
+          </a>
+          <button type="button" class="close" aria-label="Close" title="delete parent" (click)="delete(parent)">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

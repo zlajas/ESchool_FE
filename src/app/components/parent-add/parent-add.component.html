@@ -1,0 +1,41 @@
+<div class=" forme col-sm-7 my-4 mx-auto">
+  <div>
+    <h3>Add new parent</h3>
+  </div>
+  <div class="col-sm-8">
+    <form ngNativeValidate (submit)="addParent(firstName.value, lastName.value, userName.value, password.value, confirmPassword.value, emailAddress.value)">
+      <div class="form-group">
+        <label for="firstName">First name</label>
+        <input class="form-control" type="text" id="firstName" #firstName tabindex="1" required />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last name</label>
+        <input class="form-control" type="text" id="lastName" #lastName tabindex="2" required />
+      </div>
+      <div class="form-group">
+        <label for="userName">Username</label>
+        <input class="form-control" type="text" id="userName" #userName tabindex="3" required
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" type="password" id="password" #password tabindex="4" required />
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm password</label>
+        <input class="form-control" type="password" id="confirmPassword" #confirmPassword tabindex="5" required />
+      </div>
+      <div class="form-group">
+        <label for="emailAddress">Email address</label>
+        <input class="form-control" type="text" id="emailAddress" #emailAddress tabindex="6" required />
+      </div>
+      <div class="row">
+          <div class="float-right">
+              <button class="btn btn-outline-primary mr-1" type="submit" tabindex="6">Add parent</button>
+              <button class="btn btn-outline-warning" type="button" (click)="goBack()" tabindex="7">Cancel</button>
+          </div>
+      </div>
+
+    </form>
+  </div>
+</div>

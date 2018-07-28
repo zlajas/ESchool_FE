@@ -1,0 +1,29 @@
+span::after {
+    content: ", ";
+  }
+  
+span:last-of-type::after {
+    content: "";
+  }
+  .dropdown-item:hover {
+      background-color: #007bff;
+  }
+  .addButton{
+      text-align: center;
+  }
+  th.addMark{
+    text-align: center;
+    background-color: #e2e3e4;
+}
+th.subjects{
+    text-align: center;
+    background-color: rgb(207, 206, 206);
+}
+th.marks
+{
+    background-color: #e2e3e4;
+}
+th.students
+{
+    background-color: #e2e3e4;
+}

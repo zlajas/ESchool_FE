@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet'>
+</head>
+<body>
+<div class="row col-sm-12">
+  <h3 class="mx-auto">Have a look at your marks:</h3>
+</div>
+<table class="col-sm-12" *ngFor="let subject of subjects">
+    <caption><h4>{{subject.subjectName| replace : '_' : ' '}} {{subject.grade}}</h4></caption>
+      <thead>
+          <tr>
+            <th>Marks</th>
+            <th>Date</th>
+            <th>Teacher</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let mark of subject.marks">
+          <td *ngIf="mark.markValue === 1" class="bg-danger text-white font-weight-bold">{{mark.markValue}}</td>
+          <td *ngIf="mark.markValue === 2" class="bg-warning text-white font-weight-bold">{{mark.markValue}}</td>
+          <td *ngIf="mark.markValue === 3" class="bg-info text-white font-weight-bold">{{mark.markValue}}</td>
+          <td *ngIf="mark.markValue === 4" class="bg-primary text-white font-weight-bold">{{mark.markValue}}</td>
+          <td *ngIf="mark.markValue === 5" class="bg-success text-white font-weight-bold">{{mark.markValue}}</td>
+          <td>{{mark.markDate}}</td>
+          <td class="teacherSig">{{subject.teacher}}</td>
+          </tr>  
+      </tbody>
+    </table>
+    </body>
+ </html>
