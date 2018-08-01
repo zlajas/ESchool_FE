@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Mark } from '../../models/mark';
-import {ActivatedRoute} from '@angular/router';
-import {Location} from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { MarksService } from '../../services/marks/marks.service';
 
 @Component({
@@ -32,7 +32,7 @@ export class MarkDetailsComponent implements OnInit {
   }
   save(): void {
     this.markService.updateMark(this.mark)
-    .subscribe(() => this.goBack());
+      .subscribe(() => this.goBack());
   }
 
   delete(mark: Mark): void {

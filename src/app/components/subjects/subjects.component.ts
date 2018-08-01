@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {SubjectsService} from '../../services/subjects/subjects.service';
-import {Subject} from '../../models/subject';
+import { SubjectsService } from '../../services/subjects/subjects.service';
+import { Subject } from '../../models/subject';
 
 @Component({
   selector: 'app-subjects',
@@ -15,9 +15,9 @@ export class SubjectsComponent implements OnInit {
 
   getSubjects(): void {
     this.subjectsService.getSubjects()
-    .subscribe(
-      subjects=> this.subjects = subjects
-    );
+      .subscribe(
+        subjects => this.subjects = subjects
+      );
   }
 
   delete(subject: Subject): void {

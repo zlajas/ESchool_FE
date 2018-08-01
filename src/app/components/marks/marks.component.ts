@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {StudentService} from '../../services/students/student.service';
-import {User} from '../../models/user';
-import {Mark} from '../../models/mark';
-import {ActivatedRoute} from '@angular/router';
-import {Location} from '@angular/common';
+import { StudentService } from '../../services/students/student.service';
+import { User } from '../../models/user';
+import { Mark } from '../../models/mark';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { SubjectsService } from '../../services/subjects/subjects.service';
 import { MarksService } from '../../services/marks/marks.service';
 
@@ -28,15 +28,15 @@ export class MarksComponent implements OnInit {
     private studentService: StudentService,
     private subjectService: SubjectsService,
     private marksService: MarksService,
-    private location: Location) { 
-    }
+    private location: Location) {
+  }
 
-    getAllMarks(): void {
-      this.marksService.getAllMarks()
+  getAllMarks(): void {
+    this.marksService.getAllMarks()
       .subscribe(
         allMarks => this.allMarks = allMarks
       );
-    }
+  }
 
   getStudentsMarksForSubject(): void {
     this.marksService.getStudentsMarksForSubject(this.studentId, this.subjectId)
@@ -44,13 +44,13 @@ export class MarksComponent implements OnInit {
   }
 
   adminAddMarkToStudent() {
-    this.marksService.adminAddMarkToStudent(this.studentId, this.subjectId, this.mValue).subscribe(m=> {
+    this.marksService.adminAddMarkToStudent(this.studentId, this.subjectId, this.mValue).subscribe(m => {
       this.marks.push(m);
     })
   }
 
   editMark(mark: Mark): void {
-    
+
   }
 
   delete(mark: Mark): void {
@@ -60,12 +60,12 @@ export class MarksComponent implements OnInit {
 
   save(mark: Mark): void {
     this.marksService.updateMark(mark)
-    .subscribe();
+      .subscribe();
   }
 
   ngOnInit() {
     this.getStudentsMarksForSubject();
-    
+
   }
 
 }

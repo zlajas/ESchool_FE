@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ParentsService} from '../../services/parents/parents.service';
-import {User} from '../../models/user';
+import { ParentsService } from '../../services/parents/parents.service';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-parents',
@@ -15,7 +15,7 @@ export class ParentsComponent implements OnInit {
 
   getParents(): void {
     this.parentsService.getParents()
-    .subscribe(parents => this.parents = parents);
+      .subscribe(parents => this.parents = parents);
   }
 
   delete(parent: User): void {

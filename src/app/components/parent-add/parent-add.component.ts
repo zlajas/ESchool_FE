@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {User} from '../../models/user';
+import { User } from '../../models/user';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { ParentsService } from '../../services/parents/parents.service';
@@ -17,9 +17,10 @@ export class ParentAddComponent implements OnInit {
     private parentService: ParentsService) { }
 
   addParent(firstName, lastName, userName, password, confirmPassword, emailAddress) {
-    this.parentService.addParent({'id': null, 'firstName': firstName, 'lastName': lastName, 'userName': userName, 'password': password, 'confirmPassword': confirmPassword, 'emailAddress': emailAddress, 'dateOfBirth': null, 'subject': null}).subscribe(()  => {alert('Parent je uspešno dodat!');
-    this.router.navigate(['/parents']);
-  });
+    this.parentService.addParent({ 'id': null, 'firstName': firstName, 'lastName': lastName, 'userName': userName, 'password': password, 'confirmPassword': confirmPassword, 'emailAddress': emailAddress, 'dateOfBirth': null, 'subject': null }).subscribe(() => {
+      alert('Parent je uspešno dodat!');
+      this.router.navigate(['/parents']);
+    });
   }
 
   goBack() {

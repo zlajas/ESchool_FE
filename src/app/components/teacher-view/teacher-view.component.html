@@ -1,30 +1,29 @@
 <div *ngIf="teacher">
-    <table *ngFor="let subject of teacher.teachersAndSubjects" class="myTable table table-bordered">
-      <th class="subjects" colspan="3">{{subject.subjectName| replace : '_' : ' ' }} {{subject.grade}}</th>
-      <tr>
+  <table *ngFor="let subject of teacher.teachersAndSubjects" class="myTable table table-bordered">
+    <th class="subjects" colspan="3">{{subject.subjectName| replace : '_' : ' ' }} {{subject.grade}}</th>
+    <tr>
       <th class="students" colspan="1">Students</th>
       <th class="marks" colspan="1">Marks</th>
       <th class="addMark" colspan="1">Add new mark</th>
     </tr>
-      <tr *ngFor="let student of subject.studentsWithMarks">
-        <td>
-          <div>{{student.studentName}}
+    <tr *ngFor="let student of subject.studentsWithMarks">
+      <td>
+        <div>{{student.studentName}}
+        </div>
+      </td>
+      <td>
+        <span class="marks" *ngFor="let mark of student.marks">
+          <a routerLink="/mark-detail/{{mark.id}}">{{mark.markValue}}</a>
+        </span>
+      </td>
+      <td class="addButton">
+        <div ngbDropdown placement="right-top" class="d-inline-block">
+          <button class="btn btn-outline-primary btn-sm" id="dropdownBasic2" ngbDropdownToggle>Add new mark</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+            <button class="dropdown-item" *ngFor="let mValue of markValues" (click)="addMarkToStudent(student, subject, mValue)">{{mValue}}</button>
           </div>
-        </td>
-        <td>
-          <span class="marks" *ngFor="let mark of student.marks"><a routerLink="/mark-detail/{{mark.id}}">{{mark.markValue}}</a>
-          </span>
-        </td>
-        <td class="addButton">
-            <div ngbDropdown placement="right-top" class="d-inline-block">
-                <button class="btn btn-outline-primary btn-sm" id="dropdownBasic2" ngbDropdownToggle>Add new mark</button>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
-                    <button class="dropdown-item" *ngFor="let mValue of markValues" (click)="addMarkToStudent(student, subject, mValue)">{{mValue}}</button>
-                </div>
-            </div>
-        </td>
-      </tr>
-    </table>
-  </div>
-
-      
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>

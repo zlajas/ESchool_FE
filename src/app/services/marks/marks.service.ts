@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import {Observable, of} from 'rxjs';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Mark } from '../../models/mark';
 import { LoginService } from '../login.service';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
 @Injectable({
@@ -31,9 +31,9 @@ export class MarksService {
     return this.http.get<Mark>(url, this.loginService.getOptionsWithToken());
   }
 
-  adminAddMarkToStudent(Id:string, subjectId: number, markValue: number) {
+  adminAddMarkToStudent(Id: string, subjectId: number, markValue: number) {
     const url = `${this.marksUrl}/${Id}/addMarkToStudentAsAdmin/${subjectId}/${markValue}`;
-    return this.http.put<Mark>(url,{}, this.loginService.getOptionsWithToken());
+    return this.http.put<Mark>(url, {}, this.loginService.getOptionsWithToken());
   }
 
   updateMark(mark: Mark): Observable<any> {
@@ -44,10 +44,10 @@ export class MarksService {
     return this.http.post<Mark>(this.marksUrl, mark, this.loginService.getOptionsWithToken());
   }
 
-  deleteMark (mark: Mark | number): Observable<Mark> {
+  deleteMark(mark: Mark | number): Observable<Mark> {
     const id = typeof mark === 'number' ? mark : mark.id;
     const url = `${this.marksUrl}/${id}`;
-  
+
     return this.http.delete<Mark>(url, this.loginService.getOptionsWithToken());
   }
 }

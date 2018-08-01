@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {User} from '../../models/user';
-import {StudentService} from '../../services/students/student.service';
+import { User } from '../../models/user';
+import { StudentService } from '../../services/students/student.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -17,9 +17,10 @@ export class StudentAddComponent implements OnInit {
     private studentService: StudentService) { }
 
   addStudent(firstName, lastName, userName, password, confirmPassword, dateOfBirth) {
-    this.studentService.addStudent({'id': null, 'firstName': firstName, 'lastName': lastName, 'userName': userName, 'password': password, 'confirmPassword': confirmPassword, 'emailAddress': null, 'dateOfBirth': dateOfBirth, 'subject': null}).subscribe(()  => {alert('Student added!');
-    this.router.navigate(['/students']);
-  });
+    this.studentService.addStudent({ 'id': null, 'firstName': firstName, 'lastName': lastName, 'userName': userName, 'password': password, 'confirmPassword': confirmPassword, 'emailAddress': null, 'dateOfBirth': dateOfBirth, 'subject': null }).subscribe(() => {
+      alert('Student added!');
+      this.router.navigate(['/students']);
+    });
   }
 
   goBack() {

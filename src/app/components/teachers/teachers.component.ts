@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {TeachersService} from '../../services/teachers/teachers.service';
-import {User} from '../../models/user';
+import { TeachersService } from '../../services/teachers/teachers.service';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-teachers',
@@ -15,9 +15,9 @@ export class TeachersComponent implements OnInit {
 
   getTeachers(): void {
     this.teacherService.getTeachers()
-    .subscribe(
-      teachers => this.teachers = teachers
-    );
+      .subscribe(
+        teachers => this.teachers = teachers
+      );
   }
 
   delete(teacher: User): void {

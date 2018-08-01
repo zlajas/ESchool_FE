@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Subject } from '../../models/subject';
-import {ActivatedRoute} from '@angular/router';
-import {Location} from '@angular/common';
-import {SubjectsService} from '../../services/subjects/subjects.service';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { SubjectsService } from '../../services/subjects/subjects.service';
 
 @Component({
   selector: 'app-subject-details',
@@ -32,7 +32,7 @@ export class SubjectDetailsComponent implements OnInit {
   }
   save(): void {
     this.subjectService.updateSubject(this.subject)
-    .subscribe(() => this.goBack());
+      .subscribe(() => this.goBack());
   }
 
 

@@ -1,37 +1,37 @@
 <div class="container" *ngIf="subject">
     <h4>Subject details</h4>
-      <form>
-      <div class="form-row">
-          <div class="col-md-12">
-              <div class="md-form form-group">
-                  <label for="inputSN">Subject name</label>
-                  <input type="text" class="form-control" [(ngModel)]="subject.subjectName" name="subjectName">
-              </div>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-6">
-              <div class="md-form form-group">
-                  <label for="inputG">Grade</label>
-                  <input type="number" class="form-control" [(ngModel)]="subject.grade" name="grade">
-              </div>
-          </div>    
-          <div class="col-md-6">
-              <div class="md-form form-group">
-                  <label for="inputS">Semester</label>
-                  <input type="number" class="form-control" [(ngModel)]="subject.semester" name="semester">
-              </div>
-          </div>
-      </div>
-      <div class="form-row">
-        <div class="col-md-12">
-            <div class="md-form form-group">
-                <label for="inputWF">Weekly fund</label>
-                <input type="number" class="form-control" [(ngModel)]="subject.weeklyFund" name="weeklyFund">
+    <form>
+        <div class="form-row">
+            <div class="col-md-12">
+                <div class="md-form form-group">
+                    <label for="inputSN">Subject name</label>
+                    <input type="text" class="form-control" [(ngModel)]="subject.subjectName" name="subjectName">
+                </div>
             </div>
         </div>
-    </div>
-      <button type="button" class="btn btn-secondary" (click)="goBack()">Go back</button>
-      <button type="button" class="btn btn-primary btn-md ml-1" button (click)="save()">Save</button>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="md-form form-group">
+                    <label for="inputG">Grade</label>
+                    <input type="number" class="form-control" [(ngModel)]="subject.grade" name="grade">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="md-form form-group">
+                    <label for="inputS">Semester</label>
+                    <input type="number" class="form-control" [(ngModel)]="subject.semester" name="semester">
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-12">
+                <div class="md-form form-group">
+                    <label for="inputWF">Weekly fund</label>
+                    <input type="number" class="form-control" [(ngModel)]="subject.weeklyFund" name="weeklyFund">
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-secondary" (click)="goBack()">Go back</button>
+        <button type="button" class="btn btn-primary btn-md ml-1" button (click)="save()">Save</button>
     </form>
-    </div>
+</div>

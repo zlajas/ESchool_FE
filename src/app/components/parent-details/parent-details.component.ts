@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../../models/user';
-import {ActivatedRoute} from '@angular/router';
-import {Location} from '@angular/common';
-import {ParentsService} from '../../services/parents/parents.service';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { ParentsService } from '../../services/parents/parents.service';
 
 @Component({
   selector: 'app-parent-details',
@@ -32,7 +32,7 @@ export class ParentDetailsComponent implements OnInit {
   }
   save(): void {
     this.parentService.updateParent(this.parent)
-    .subscribe(() => this.goBack());
+      .subscribe(() => this.goBack());
   }
 
 

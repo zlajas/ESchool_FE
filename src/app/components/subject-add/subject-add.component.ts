@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Subject} from '../../models/subject';
-import {SubjectsService} from '../../services/subjects/subjects.service';
+import { Subject } from '../../models/subject';
+import { SubjectsService } from '../../services/subjects/subjects.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -19,9 +19,10 @@ export class SubjectAddComponent implements OnInit {
   }
 
   addSubject(subjectName, grade, semester, weeklyFund) {
-    this.subjectService.addSubject({'subjectId': null, 'subjectName': subjectName, 'grade': grade, 'semester': semester, 'weeklyFund': weeklyFund}).subscribe(()  => {alert('Subject added!');
-    this.router.navigate(['/subjects']);
-  });
+    this.subjectService.addSubject({ 'subjectId': null, 'subjectName': subjectName, 'grade': grade, 'semester': semester, 'weeklyFund': weeklyFund }).subscribe(() => {
+      alert('Subject added!');
+      this.router.navigate(['/subjects']);
+    });
   }
 
   goBack() {

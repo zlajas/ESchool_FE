@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   @Input() loggedInUser: LoginUser;
 
-  constructor(private loginService: LoginService, private router:Router) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
     this.loggedInUser = this.loginService.loggedInUser;
@@ -28,9 +28,9 @@ export class LoginComponent implements OnInit {
   }
 
   goPlaces() {
-  
+
     this.router.navigate(['/login']);
-    
+
   }
 
 }

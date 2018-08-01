@@ -13,19 +13,19 @@ export class StudentViewComponent implements OnInit {
 
   @Input() loggedInUser: LoginUser;
   subjects: StudentViewDTO[];
- 
-  
+
+
   constructor(private studentService: StudentService,
-  private loginService: LoginService
-  ) { 
+    private loginService: LoginService
+  ) {
   }
 
 
 
-getStudentsMarks() {
+  getStudentsMarks() {
     this.studentService.getStudentsMarks(this.loggedInUser.UserId)
       .subscribe(subjects => this.subjects = subjects);
-}
+  }
 
   ngOnInit() {
     this.getStudentsMarks();

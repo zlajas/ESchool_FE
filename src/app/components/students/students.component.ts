@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {StudentService} from '../../services/students/student.service';
-import {User} from '../../models/user';
+import { StudentService } from '../../services/students/student.service';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-students',
@@ -9,15 +9,15 @@ import {User} from '../../models/user';
 })
 export class StudentsComponent implements OnInit {
 
-studentsey: User[];
+  studentsey: User[];
 
   constructor(private studentService: StudentService) { }
 
   getStudents(): void {
     this.studentService.getStudents()
-    .subscribe(
-      students => this.studentsey = students
-    );
+      .subscribe(
+        students => this.studentsey = students
+      );
   }
 
   delete(student: User): void {

@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {User} from '../../models/user';
-import {ActivatedRoute} from '@angular/router';
-import {Location} from '@angular/common';
-import {StudentService} from '../../services/students/student.service';
+import { User } from '../../models/user';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+import { StudentService } from '../../services/students/student.service';
 
 @Component({
   selector: 'app-student-details',
@@ -31,7 +31,7 @@ export class StudentDetailsComponent implements OnInit {
   }
   save(): void {
     this.studentService.updateStudent(this.student)
-    .subscribe(() => this.goBack());
+      .subscribe(() => this.goBack());
   }
 }
 

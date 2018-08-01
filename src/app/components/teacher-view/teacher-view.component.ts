@@ -3,7 +3,7 @@ import { LoginUser } from '../../models/loginUser';
 import { TeacherViewDTO, StudentsAndMarksDTO, SubjectsOfTeacherDTO } from '../../models/dto/TeacherViewDTO';
 import { LoginService } from '../../services/login.service';
 import { TeachersService } from '../../services/teachers/teachers.service';
-import {Mark} from '../../models/mark';
+import { Mark } from '../../models/mark';
 import { Subject } from '../../models/subject';
 
 @Component({
@@ -20,10 +20,9 @@ export class TeacherViewComponent implements OnInit {
   mValue: number;
   @Input() marks: Mark[];
   students: StudentsAndMarksDTO;
-  
+
   constructor(private teacherService: TeachersService,
-  private loginService: LoginService) 
-  { }
+    private loginService: LoginService) { }
 
 
   ngOnInit() {
@@ -33,11 +32,12 @@ export class TeacherViewComponent implements OnInit {
   getTeachersView() {
     this.teacherService.getTeachersView(this.loggedInUser.UserId)
       .subscribe(t => this.teacher = t);
-}
+  }
 
-addMarkToStudent(student: StudentsAndMarksDTO, subject: SubjectsOfTeacherDTO, mValue:number) {
-  this.teacherService.adddMarkToStudent(student.studentId, subject.subjectId, this.loggedInUser.UserId, mValue).subscribe(m=> {this.teacher.teachersAndSubjects.find(sub => sub.subjectId == subject.subjectId).studentsWithMarks.find(stu => stu.studentId ==student.studentId).marks.push(m);  
-  })
-}
+  addMarkToStudent(student: StudentsAndMarksDTO, subject: SubjectsOfTeacherDTO, mValue: number) {
+    this.teacherService.adddMarkToStudent(student.studentId, subject.subjectId, this.loggedInUser.UserId, mValue).subscribe(m => {
+      this.teacher.teachersAndSubjects.find(sub => sub.subjectId == subject.subjectId).studentsWithMarks.find(stu => stu.studentId == student.studentId).marks.push(m);
+    })
+  }
 
 }

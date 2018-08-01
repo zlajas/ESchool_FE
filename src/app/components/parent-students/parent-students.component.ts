@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {User} from '../../models/user';
-import {ActivatedRoute} from '@angular/router';
-import {Location} from '@angular/common';
+import { User } from '../../models/user';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { ParentsService } from '../../services/parents/parents.service';
 
 @Component({
@@ -17,15 +17,15 @@ export class ParentStudentsComponent implements OnInit {
   inicijalnoOdabraniTip: string;
   student: User;
   parentId = this.route.snapshot.paramMap.get('id');
-  
+
 
   constructor(private route: ActivatedRoute,
     private parentService: ParentsService,
     private location: Location) {
-      this.parent = new User();
-     }
- ngOnInit() {
-    this.parentService.getParent(this.parentId).subscribe(p =>this.parent = p);
+    this.parent = new User();
+  }
+  ngOnInit() {
+    this.parentService.getParent(this.parentId).subscribe(p => this.parent = p);
     this.getParentsKids();
     this.getRemainingStudents();
   }
@@ -38,12 +38,12 @@ export class ParentStudentsComponent implements OnInit {
   getRemainingStudents() {
     const id = this.route.snapshot.paramMap.get('id');
     this.parentService.getRemainingStudents(id).subscribe(remainingStudents => this.remainingStudents = remainingStudents);
-    
+
   }
   addStudentToParent() {
     this.parentService.addStudentToParent(this.parentId, this.student.id).subscribe(_ => {
       this.parentsKids.push(this.student);
-      }
+    }
     );
   }
   removeStudentFromParent(s: User): void {

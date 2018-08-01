@@ -1,24 +1,24 @@
 <div class="container" *ngIf="mark">
-  <br/>
-  <h4>Mark details</h4>
+    <br/>
+    <h4>Mark details</h4>
     <form>
-    <div class="form-row">
-        <div class="col-md-6">
-            <div class="md-form form-group">
-                <label for="inputMV">Mark value</label>
-                <input type="number" class="form-control" [(ngModel)]="mark.markValue" name="markValue">
+        <div class="form-row">
+            <div class="col-md-6">
+                <div class="md-form form-group">
+                    <label for="inputMV">Mark value</label>
+                    <input type="number" class="form-control" [(ngModel)]="mark.markValue" name="markValue">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="md-form form-group">
+                    <label for="inputMD">Mark date</label>
+                    <input type="text" class="form-control" [(ngModel)]="mark.markDate" name="markDate">
+                </div>
             </div>
         </div>
-  
-        <div class="col-md-6">
-            <div class="md-form form-group">
-                <label for="inputMD">Mark date</label>
-                <input type="text" class="form-control" [(ngModel)]="mark.markDate" name="markDate">
-            </div>
-        </div>
-    </div> 
-    <button type="button" class="btn btn-secondary" (click)="goBack()">Cancel</button>
-    <button type="button" class="btn btn-primary btn-md ml-1" button (click)="save()">Save</button>
-    <button class='btn btn-danger ml-1' title="delete mark" (click)="delete(mark)">Delete mark</button>
-  </form>
-  </div>
+        <button type="button" class="btn btn-secondary" (click)="goBack()">Cancel</button>
+        <button type="button" class="btn btn-primary btn-md ml-1" button (click)="save()">Save</button>
+        <button class='btn btn-danger ml-1' title="delete mark" (click)="delete(mark)">Delete mark</button>
+    </form>
+</div>

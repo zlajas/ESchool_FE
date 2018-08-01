@@ -1,38 +1,38 @@
 <div class="container" *ngIf="parent">
     <h4>Parent details</h4>
-      <form>
-      <div class="form-row">
-          <div class="col-md-6">
-              <div class="md-form form-group">
-                  <label for="inputFN">First name</label>
-                  <input type="text" class="form-control" [(ngModel)]="parent.firstName" name="firstName">
-              </div>
-          </div>
-    
-          <div class="col-md-6">
-              <div class="md-form form-group">
-                  <label for="inputLN">Last name</label>
-                  <input type="text" class="form-control" [(ngModel)]="parent.lastName" name="lastName">
-              </div>
-          </div>
-      </div> 
-      <div class="form-row">
+    <form>
+        <div class="form-row">
             <div class="col-md-6">
-                    <div class="md-form form-group">
-                        <label for="inputUN">Username</label>
-                        <input type="text" class="form-control" [(ngModel)]="parent.userName" name="userName">
-                    </div>
+                <div class="md-form form-group">
+                    <label for="inputFN">First name</label>
+                    <input type="text" class="form-control" [(ngModel)]="parent.firstName" name="firstName">
                 </div>
-          <div class="col-md-6">
-              <div class="md-form form-group">
-                  <label for="inputDOB">Email address</label>
-                  <input type="email" class="form-control" [(ngModel)]="parent.emailAddress" name="emailAddress">
-              </div>
-          </div>
-      </div>
-      <button type="button" class="btn btn-secondary" (click)="goBack()">Go back</button>
-      <button type="button" class="btn btn-primary btn-md ml-1" button (click)="save()">Save</button>
+            </div>
+
+            <div class="col-md-6">
+                <div class="md-form form-group">
+                    <label for="inputLN">Last name</label>
+                    <input type="text" class="form-control" [(ngModel)]="parent.lastName" name="lastName">
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6">
+                <div class="md-form form-group">
+                    <label for="inputUN">Username</label>
+                    <input type="text" class="form-control" [(ngModel)]="parent.userName" name="userName">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="md-form form-group">
+                    <label for="inputDOB">Email address</label>
+                    <input type="email" class="form-control" [(ngModel)]="parent.emailAddress" name="emailAddress">
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-secondary" (click)="goBack()">Go back</button>
+        <button type="button" class="btn btn-primary btn-md ml-1" button (click)="save()">Save</button>
     </form>
-    </div>
-    <br/>
+</div>
+<br/>
 <app-parent-students></app-parent-students>
